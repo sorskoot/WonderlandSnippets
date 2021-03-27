@@ -1,0 +1,20 @@
+{
+    "name": "wonderlandsnippets",
+    "displayName": "WonderlandSnippets",
+    "description": "Code snippets for use with the Wonderland Engine",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.54.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}
