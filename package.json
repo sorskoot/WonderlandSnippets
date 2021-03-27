@@ -1,8 +1,11 @@
 {
     "name": "wonderlandsnippets",
-    "displayName": "WonderlandSnippets",
+    "repository": {"type": "github","url": "https://github.com/sorskoot/WonderlandSnippets"},
+    "displayName": "Wonderland Snippets",
     "description": "Code snippets for use with the Wonderland Engine",
-    "version": "0.0.1",
+    "version": "0.8.0",
+    "publisher": "Sorskoot",
+    "icon":"wonderland.png",
     "engines": {
         "vscode": "^1.54.0"
     },
@@ -13,7 +16,7 @@
         "snippets": [
             {
                 "language": "javascript",
-                "path": "./snippets/snippets.code-snippets"
+                "path": "./snippets/wonderland.code-snippets"
             }
         ]
     }

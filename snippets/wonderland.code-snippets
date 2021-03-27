@@ -1,0 +1,72 @@
+{
+	"component-parameter-enum": {
+		"body": "${1:name}: {type: WL.Type.Enum, values: ['A','B'], default: 'A'}$0",
+		"description": "adds a component parameter of type enum",
+		"scope": "javascript",
+		"prefix": "wl:param:enum"
+	},
+	"component-parameter-float": {
+		"body": "${1:name}: {type: WL.Type.Float, default: ${2:1.0}}$0",
+		"description": "adds a component parameter of type float",
+		"scope": "javascript",
+		"prefix": "wl:param:float"
+	},
+	"component-parameter-object": {
+		"body": "${1:name}: {type: WL.Type.Object, default: null}$0",
+		"description": "adds a component parameter of type object",
+		"scope": "javascript",
+		"prefix": "wl:param:object"
+	},
+	"component-parameter-bool": {
+		"body": "${1:name}: {type: WL.Type.Bool, default: ${2:false}}$0",
+		"description": "adds a component parameter of type boolean",
+		"scope": "javascript",
+		"prefix": "wl:param:bool"
+	},
+	"component-parameter-mesh": {
+		"body": "${1:name}: {type: WL.Type.Material}$0",
+		"description": "adds a component parameter of type material",
+		"scope": "javascript",
+		"prefix": "wl:param:material"
+	},
+	"component-parameter-material": {
+		"body": "${1:name}: {type: WL.Type.Mesh}$0",
+		"description": "adds a component parameter of type mesh",
+		"scope": "javascript",
+		"prefix": "wl:param:mesh"
+	},
+	"component-parameter-int": {
+		"body": "${1:name}: {type: WL.Type.Int, default: $2}$0",
+		"description": "adds a component parameter of type int",
+		"scope": "javascript",
+		"prefix": "wl:param:int"
+	},
+	"Wonderland Script Reference":{
+		"body": "/// <reference path=\"../../deploy/wonderland.js\" />",
+		"description": "add a reference to the deploy folder with the wonderland script",
+		"scope": "javascript",
+		"prefix":"wl:script-reference"
+	},
+	"Wonderland new component":{
+		"description": "New and empty component",
+		"scope": "javascript",
+		"prefix": "wl:component",
+		"body": [
+			"/// <reference path=\"../deploy/wonderland.js\" />",
+			"WL.registerComponent('$TM_FILENAME_BASE', {",
+			"    $0",
+			"}, {",
+			"    init: function() {",
+			"        ",
+			"    },",
+			"    start: function() {",
+			"    ",
+			"    },",
+			"    update: function(dt) {",
+			"        ",
+			"    },",
+			"});"
+		]
+
+	}
+}
