@@ -65,6 +65,30 @@
 		"scope": "javascript",
 		"prefix": "wl:param:string"
 	},
+	"object-get-component": {
+		"body": "let ${1:comp} = ${2:this.object}.getComponent('${3:collision}');\n$0",
+		"description": "gets a component from an object, stored into local variable",
+		"scope": "javascript",
+		"prefix": "wl:get-component"
+	},
+	"object-get-member-component": {
+		"body": "this.${1:comp} = ${2:this.object}.getComponent('${3:collision}');\n$0",
+		"description": "gets a component from an object, stored as member",
+		"scope": "javascript",
+		"prefix": "wl:get-member-component"
+	},
+	"object-add-component": {
+		"body": "let ${1:comp} = ${2:this.object}.addComponent('${3:collision}', {$0}});\n",
+		"description": "adds a component to an object, stored into local variable",
+		"scope": "javascript",
+		"prefix": "wl:add-component"
+	},
+	"object-add-member-component": {
+		"body": "this.${1:comp} = ${2:this.object}.addComponent('${3|collision,mesh,text,physx,view,light,animation,input,${4:cursor-target}|}', {$0});\n",
+		"description": "adds a component to an object, stored as member",
+		"scope": "javascript",
+		"prefix": "wl:add-member-component"
+	},
 	"Wonderland Script Reference":{
 		"body": "/// <reference path=\"../../deploy/wonderland.js\" />",
 		"description": "add a reference to the deploy folder with the wonderland script",
