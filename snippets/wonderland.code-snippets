@@ -66,28 +66,28 @@
 		"prefix": "wl:param:string"
 	},
 	"object-get-component": {
-		"body": "let ${1:comp} = ${2:this.object}.getComponent('${3:collision}');\n$0",
+		"body": "let ${1:comp} = ${2:this.object}.getComponent('${3:component}');\n$0",
 		"description": "gets a component from an object, stored into local variable",
 		"scope": "javascript",
-		"prefix": "wl:get-component"
+		"prefix": "wl:component:get"
 	},
 	"object-get-member-component": {
-		"body": "this.${1:comp} = ${2:this.object}.getComponent('${3:collision}');\n$0",
+		"body": "this.${1:comp} = ${2:this.object}.getComponent('${3:component}');\n$0",
 		"description": "gets a component from an object, stored as member",
 		"scope": "javascript",
-		"prefix": "wl:get-member-component"
+		"prefix": "wl:component:get-member"
 	},
 	"object-add-component": {
-		"body": "let ${1:comp} = ${2:this.object}.addComponent('${3:collision}', {$0}});\n",
+		"body": "let ${1:comp} = ${2:this.object}.addComponent('${3:component}', {$0}});\n",
 		"description": "adds a component to an object, stored into local variable",
 		"scope": "javascript",
-		"prefix": "wl:add-component"
+		"prefix": "wl:component:add"
 	},
 	"object-add-member-component": {
-		"body": "this.${1:comp} = ${2:this.object}.addComponent('${3|collision,mesh,text,physx,view,light,animation,input,${4:cursor-target}|}', {$0});\n",
+		"body": "this.${1:comp} = ${2:this.object}.addComponent('${3:component}', {$0});\n",
 		"description": "adds a component to an object, stored as member",
 		"scope": "javascript",
-		"prefix": "wl:add-member-component"
+		"prefix": "wl:component:add-member"
 	},
 	"add-object": {
 		"body": "let ${1:obj} = WL.scene.addObject(${2:this.object});\n$0",
