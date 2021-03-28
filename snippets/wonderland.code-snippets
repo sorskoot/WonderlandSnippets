@@ -1,6 +1,6 @@
 {
 	"component-parameter-enum": {
-		"body": "${1:name}: {type: WL.Type.Enum, values: ['A','B'], default: 'A'}$0",
+		"body": "${1:name}: {type: WL.Type.Enum, values: [${2:'A','B'}], default: ${3:'A'}}$0",
 		"description": "adds a component parameter of type enum",
 		"scope": "javascript",
 		"prefix": "wl:param:enum"
@@ -12,7 +12,7 @@
 		"prefix": "wl:param:float"
 	},
 	"component-parameter-object": {
-		"body": "${1:name}: {type: WL.Type.Object, default: null}$0",
+		"body": "${1:name}: {type: WL.Type.Object}$0",
 		"description": "adds a component parameter of type object",
 		"scope": "javascript",
 		"prefix": "wl:param:object"
@@ -35,11 +35,77 @@
 		"scope": "javascript",
 		"prefix": "wl:param:mesh"
 	},
+	"component-parameter-texture": {
+		"body": "${1:name}: {type: WL.Type.Texture}$0",
+		"description": "adds a component parameter of type texture",
+		"scope": "javascript",
+		"prefix": "wl:param:texture"
+	},
+	"component-parameter-animation": {
+		"body": "${1:name}: {type: WL.Type.Animation}$0",
+		"description": "adds a component parameter of type animation",
+		"scope": "javascript",
+		"prefix": "wl:param:animation"
+	},
+	"component-parameter-Skin": {
+		"body": "${1:name}: {type: WL.Type.Skin}$0",
+		"description": "adds a component parameter of type skin",
+		"scope": "javascript",
+		"prefix": "wl:param:skin"
+	},
 	"component-parameter-int": {
 		"body": "${1:name}: {type: WL.Type.Int, default: $2}$0",
 		"description": "adds a component parameter of type int",
 		"scope": "javascript",
 		"prefix": "wl:param:int"
+	},
+	"component-parameter-string": {
+		"body": "${1:name}: {type: WL.Type.String, default: '$2'}$0",
+		"description": "adds a component parameter of type string",
+		"scope": "javascript",
+		"prefix": "wl:param:string"
+	},
+	"object-get-component": {
+		"body": "let ${1:comp} = ${2:this.object}.getComponent('${3:component}');\n$0",
+		"description": "gets a component from an object, stored into local variable",
+		"scope": "javascript",
+		"prefix": "wl:component:get"
+	},
+	"object-get-member-component": {
+		"body": "this.${1:comp} = ${2:this.object}.getComponent('${3:component}');\n$0",
+		"description": "gets a component from an object, stored as member",
+		"scope": "javascript",
+		"prefix": "wl:component:get-member"
+	},
+	"object-add-component": {
+		"body": "let ${1:comp} = ${2:this.object}.addComponent('${3:component}', {$0}});\n",
+		"description": "adds a component to an object, stored into local variable",
+		"scope": "javascript",
+		"prefix": "wl:component:add"
+	},
+	"object-add-member-component": {
+		"body": "this.${1:comp} = ${2:this.object}.addComponent('${3:component}', {$0});\n",
+		"description": "adds a component to an object, stored as member",
+		"scope": "javascript",
+		"prefix": "wl:component:add-member"
+	},
+	"add-object": {
+		"body": "let ${1:obj} = WL.scene.addObject(${2:this.object});\n$0",
+		"description": "adds an object into the scene",
+		"scope": "javascript",
+		"prefix": "wl:add-object"
+	},
+	"add-objects": {
+		"body": [
+			"let ${1:objects} = WL.scene.addObjects(${2:count}, ${3:this.object}, ${4:componentsPerObject}*$2);",
+			"for(let i = 0; i < $1.length; ++i) {",
+			"    const o = $1[i];",
+			"    o.$0",
+			"}"
+		],
+		"description": "batch adds objects into the scene and starts a loop to add components for each",
+		"scope": "javascript",
+		"prefix": "wl:add-objects"
 	},
 	"Wonderland Script Reference":{
 		"body": "/// <reference path=\"../../deploy/wonderland.js\" />",
