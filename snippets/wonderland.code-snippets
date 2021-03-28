@@ -35,11 +35,35 @@
 		"scope": "javascript",
 		"prefix": "wl:param:mesh"
 	},
+	"component-parameter-texture": {
+		"body": "${1:name}: {type: WL.Type.Texture}$0",
+		"description": "adds a component parameter of type texture",
+		"scope": "javascript",
+		"prefix": "wl:param:texture"
+	},
+	"component-parameter-animation": {
+		"body": "${1:name}: {type: WL.Type.Animation}$0",
+		"description": "adds a component parameter of type animation",
+		"scope": "javascript",
+		"prefix": "wl:param:animation"
+	},
+	"component-parameter-Skin": {
+		"body": "${1:name}: {type: WL.Type.Skin}$0",
+		"description": "adds a component parameter of type skin",
+		"scope": "javascript",
+		"prefix": "wl:param:skin"
+	},
 	"component-parameter-int": {
 		"body": "${1:name}: {type: WL.Type.Int, default: $2}$0",
 		"description": "adds a component parameter of type int",
 		"scope": "javascript",
 		"prefix": "wl:param:int"
+	},
+	"component-parameter-string": {
+		"body": "${1:name}: {type: WL.Type.String, default: '$2'}$0",
+		"description": "adds a component parameter of type string",
+		"scope": "javascript",
+		"prefix": "wl:param:string"
 	},
 	"Wonderland Script Reference":{
 		"body": "/// <reference path=\"../../deploy/wonderland.js\" />",
