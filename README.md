@@ -16,8 +16,18 @@ Currently available snippets:
 | `wl:param:bool` | create component parameter of type bool |
 | `wl:param:material` | create component parameter of type material |
 | `wl:param:mesh` | create component parameter of type mesh |
+| `wl:param:texture` | create component parameter of type texture |
+| `wl:param:animation` | create component parameter of type animation |
+| `wl:param:skin` | create component parameter of type skin |
 | `wl:param:int` | create component parameter of type int |
-| `wl:script-reference` | adds a reference to the deploy folder with the wonderland script |
+| `wl:param:string` | create component parameter of type string |
+| `wl:script-reference` | adds a reference to the deploy folder with the wonderland script for IntelliSense |
+| `object-get-component` | gets a component from an object, stored into local variable |
+| `object-get-member-component` | gets a component from an object, stored as member |
+| `object-add-component` | adds a component to an object, stored into local variable |
+| `object-add-member-component` | adds a component to an object, stored as member |
+| `add-object` | adds an object into the scene |
+| `add-objects` | batch adds objects into the scene and starts a loop to add components for each |
 
 ## Known Issues
 
