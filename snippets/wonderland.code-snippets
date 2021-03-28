@@ -1,6 +1,6 @@
 {
 	"component-parameter-enum": {
-		"body": "${1:name}: {type: WL.Type.Enum, values: ['A','B'], default: 'A'}$0",
+		"body": "${1:name}: {type: WL.Type.Enum, values: [${2:'A','B'}], default: ${3:'A'}}$0",
 		"description": "adds a component parameter of type enum",
 		"scope": "javascript",
 		"prefix": "wl:param:enum"
