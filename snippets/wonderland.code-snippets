@@ -89,6 +89,24 @@
 		"scope": "javascript",
 		"prefix": "wl:add-member-component"
 	},
+	"add-object": {
+		"body": "let ${1:obj} = WL.scene.addObject(${2:this.object});\n$0",
+		"description": "adds an object into the scene",
+		"scope": "javascript",
+		"prefix": "wl:add-object"
+	},
+	"add-objects": {
+		"body": [
+			"let ${1:objects} = WL.scene.addObjects(${2:count}, ${3:this.object}, ${4:componentsPerObject}*$2);",
+			"for(let i = 0; i < $1.length; ++i) {",
+			"    const o = $1[i];",
+			"    o.$0",
+			"}"
+		],
+		"description": "batch adds objects into the scene and starts a loop to add components for each",
+		"scope": "javascript",
+		"prefix": "wl:add-objects"
+	},
 	"Wonderland Script Reference":{
 		"body": "/// <reference path=\"../../deploy/wonderland.js\" />",
 		"description": "add a reference to the deploy folder with the wonderland script",
