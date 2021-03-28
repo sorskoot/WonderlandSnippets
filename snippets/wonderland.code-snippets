@@ -12,7 +12,7 @@
 		"prefix": "wl:param:float"
 	},
 	"component-parameter-object": {
-		"body": "${1:name}: {type: WL.Type.Object, default: null}$0",
+		"body": "${1:name}: {type: WL.Type.Object}$0",
 		"description": "adds a component parameter of type object",
 		"scope": "javascript",
 		"prefix": "wl:param:object"
