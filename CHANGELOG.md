@@ -4,6 +4,11 @@ All notable changes to the "wonderlandsnippets" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
 
-- Initial release
+### 0.8.2
+
+- Added the class based component 
+
+### 0.8.0
+
+- Initial release of the snippets.

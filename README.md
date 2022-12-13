@@ -11,6 +11,7 @@ Currently available snippets:
 | prefix | functionalty |
 | --- | --- | 
 | `wl:component` | scaffolds the basic component |
+| `wl:class-component` | scaffolds the basic class-based component |
 | `wl:component:get` | gets a component from an object, stored into local variable |
 | `wl:component:get-member` | gets a component from an object, stored as member |
 | `wl:component:add` | adds a component to an object, stored into local variable |
@@ -35,6 +36,9 @@ Currently available snippets:
 Nothing known yet. 
 
 ## Release Notes
+
+### 0.8.2
+- Added the class based component 
 
 ### 0.8.0
 

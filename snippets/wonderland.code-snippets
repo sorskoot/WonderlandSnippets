@@ -134,5 +134,31 @@
 			"});"
 		]
 
+	},
+	"Wonderland new class based component":{
+		"description": "New and empty component from a class (need to use npm)",
+		"scope": "javascript",
+		"prefix": "wl:class-component",
+		"body": [
+			"import {Component} from '@wonderlandengine/api';",
+			"",
+			"class $TM_FILENAME_BASE extends Component {",
+			"    static TypeName = '$TM_FILENAME_BASE';",
+			"    static Properties = {",
+			"    }",
+			"",
+			"    init() {",
+			"    }",
+			"",
+			"    start() {",			
+			"    }",
+			"",
+			"    update(dt) {",			
+			"    }",
+			"",
+			"};",
+			"",
+			"WL.registerComponent($TM_FILENAME_BASE);"
+		]
 	}
 }
