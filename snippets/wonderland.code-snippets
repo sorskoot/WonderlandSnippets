@@ -135,14 +135,14 @@
 		]
 
 	},
-	"Wonderland new class based component":{
+	"Create Wonderland new class based component":{
 		"description": "New and empty component from a class (need to use npm)",
 		"scope": "javascript",
 		"prefix": "wl:class-component",
 		"body": [
 			"import {Component} from '@wonderlandengine/api';",
 			"",
-			"class $TM_FILENAME_BASE extends Component {",
+			"export class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends Component {",
 			"    static TypeName = '$TM_FILENAME_BASE';",
 			"    static Properties = {",
 			"    }",
@@ -156,9 +156,15 @@
 			"    update(dt) {",			
 			"    }",
 			"",
-			"};",
-			"",
-			"WL.registerComponent($TM_FILENAME_BASE);"
+			"};",			
+		]
+	},
+	"Register Wonderland new class based component":{
+		"description": "Register component",
+		"scope": "javascript",
+		"prefix": "wl:register-component",
+		"body": [
+			"WL.registerComponent($0);",			
 		]
 	}
 }

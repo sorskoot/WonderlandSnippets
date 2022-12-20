@@ -37,6 +37,10 @@ Nothing known yet.
 
 ## Release Notes
 
+### 0.8.3
+- Moved registering of component to its own snippet
+- Classname transforms to PascalCase from filename
+
 ### 0.8.2
 - Added the class based component 
 
