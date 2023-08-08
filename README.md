@@ -37,7 +37,7 @@ Nothing known yet.
 
 ## Release Notes
 
-### 0.9.0
+### 1.1.0
 
 - Added TypeScript Snippets
 
