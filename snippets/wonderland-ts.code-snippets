@@ -1,0 +1,92 @@
+{
+	"component-parameter-object": {
+	  "body": ["@property.object()", "${1:name}?:Object3D$0;"],
+	  "description": "adds a component parameter of type object",
+	  "scope": "typescript",
+	  "prefix": "wl:param:object"
+	},
+	"component-parameter-float": {
+	  "body": ["@property.float($2)", "${1:name}=$2$0;"],
+	  "description": "adds a component parameter of type float",
+	  "scope": "typescript",
+	  "prefix": "wl:param:float"
+	},
+	"component-parameter-int": {
+	  "body": ["@property.int($2)", "${1:name}=$2$0;"],
+	  "description": "adds a component parameter of type int",
+	  "scope": "typescript",
+	  "prefix": "wl:param:int"
+	},
+	"component-parameter-string": {
+	  "body": ["@property.string('$2')", "${1:name}='$2'$0;"],
+	  "description": "adds a component parameter of type string",
+	  "scope": "typescript",
+	  "prefix": "wl:param:string"
+	},
+	"component-parameter-bool": {
+	  "body": ["@property.bool(${2|false,true|})", "${1:name}=$2$0;"],
+	  "description": "adds a component parameter of type bool",
+	  "scope": "typescript",
+	  "prefix": "wl:param:bool"
+	},
+	"component-parameter-mesh": {
+	  "body": ["@property.material()", "${1:name}?:Material$0;"],
+	  "description": "adds a component parameter of type material",
+	  "scope": "typescript",
+	  "prefix": "wl:param:material"
+  },
+  "component-parameter-material": {
+	  "body": ["@property.mesh()", "${1:name}?:Mesh$0;"],
+	  "description": "adds a component parameter of type mesh",
+	  "scope": "typescript",
+	  "prefix": "wl:param:mesh"
+  },
+  "component-parameter-texture": {
+	  "body": ["@property.texture()", "${1:name}?:Texture$0;"],
+	  "description": "adds a component parameter of type texture",
+	  "scope": "typescript",
+	  "prefix": "wl:param:texture"
+  },
+  "component-parameter-animation": {
+	  "body": ["@property.animation()", "${1:name}?:Animation$0;"],
+	  "description": "adds a component parameter of type animation",
+	  "scope": "typescript",
+	  "prefix": "wl:param:animation"
+  },
+  "component-parameter-Skin": {
+	  "body": ["@property.skin()", "${1:name}?:Skin$0;"],
+	  "description": "adds a component parameter of type skin",
+	  "scope": "typescript",
+	  "prefix": "wl:param:skin"
+  },
+  "component-parameter-enum": {
+	  "body":["@property.enum([${2:'A','B'}], ${3:'A'})","${1:name}:$3;"],
+	  "description": "adds a component parameter of type enum",
+	  "scope": "typescript",
+	  "prefix": "wl:param:enum"
+  },
+	"Create Wonderland new class based component": {
+	  "description": "New and empty component",
+	  "scope": "typescript",
+	  "prefix": "wl:component",
+	  "body": [
+		"import { Component, Object3D } from '@wonderlandengine/api';",
+		"import { property } from '@wonderlandengine/api/decorators.js';",
+		"",
+		"export class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends Component {",
+		"    static TypeName = '$TM_FILENAME_BASE';",
+		"",
+		"    init() {",
+		"    }",
+		"",
+		"    start() {",
+		"    }",
+		"",
+		"    update(dt:number) {",
+		"    }",
+		"",
+		"};"
+	  ]
+	}
+  }
+  
