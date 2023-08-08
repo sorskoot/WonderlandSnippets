@@ -4,6 +4,10 @@ All notable changes to the "wonderlandsnippets" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+### 0.9.0
+
+- Added snippets for TypeScript
+
 ### 0.8.3
 
 - Moved registering of component to its own snippet
