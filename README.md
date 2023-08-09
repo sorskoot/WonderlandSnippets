@@ -37,6 +37,10 @@ Nothing known yet.
 
 ## Release Notes
 
+### 1.1.1
+
+- Fix Readme.md
+
 ### 1.1.0
 
 - Added TypeScript Snippets
