@@ -9,7 +9,7 @@ All snippets start `wl:`.
 Currently available snippets:
 
 | prefix | functionalty | JS/TS |
-| --- | --- | 
+| --- | --- | --- | 
 | `wl:component` | scaffolds the basic component | JS+TS | 
 | `wl:class-component` | scaffolds the basic class-based component | JS |
 | `wl:component:get` | gets a component from an object, stored into local variable | JS |
@@ -23,8 +23,8 @@ Currently available snippets:
 | `wl:param:material` | create component parameter of type material | JS+TS | 
 | `wl:param:mesh` | create component parameter of type mesh | JS+TS | 
 | `wl:param:texture` | create component parameter of type texture | JS+TS | 
-| `wl:param:animation` | create component parameter of type animation  JS+TS | 
-| `wl:param:skin` | create component parameter of type skin |
+| `wl:param:animation` | create component parameter of type animation | JS+TS | 
+| `wl:param:skin` | create component parameter of type skin | JS+TS | 
 | `wl:param:int` | create component parameter of type int | JS+TS | 
 | `wl:param:string` | create component parameter of type string | JS+TS | 
 | `wl:script-reference` | adds a reference to the deploy folder with the wonderland script for IntelliSense | JS |
