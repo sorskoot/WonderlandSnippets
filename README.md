@@ -30,6 +30,9 @@ Currently available snippets:
 | `wl:script-reference` | adds a reference to the deploy folder with the wonderland script for IntelliSense | JS |
 | `wl:add-object` | adds an object into the scene | JS |
 | `wl:add-objects` | batch adds objects into the scene and starts a loop to add components for each | JS |
+| `wl:throw-missing-prop` | Check for missing property and throws error if missing | TS |
+| `wl:throw-missing-component` | Check for missing component and throws error if missing | TS |
+
 
 ## Known Issues
 
