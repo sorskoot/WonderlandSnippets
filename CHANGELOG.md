@@ -4,6 +4,12 @@ All notable changes to the "wonderlandsnippets" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+### 1.1.3
+
+- Add the vector types for properties (vector2, vector3 and vector4)
+- Add Singleton component in typescript
+- Add enum property based on enum type in typescript
+
 ### 1.1.2
 
 - Update TypeScript Snippets with:
@@ -22,7 +28,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### 0.8.2
 
-- Added the class based component 
+- Added the class based component
 
 ### 0.8.0
 

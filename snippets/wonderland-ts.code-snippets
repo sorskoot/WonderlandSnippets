@@ -1,92 +1,169 @@
 {
     "component-parameter-object": {
-      "body": ["@property.object({required:true})", "${1:name}!:Object3D$0;"],
-      "description": "adds a component parameter of type object",
-      "scope": "typescript",
-      "prefix": "wl:param:object"
+        "body": ["@property.object({required:true})", "${1:name}!:Object3D$0;"],
+        "description": "adds a component parameter of type object",
+        "scope": "typescript",
+        "prefix": "wl:param:object"
     },
     "component-parameter-float": {
-      "body": ["@property.float($2)", "${1:name}=$2$0;"],
-      "description": "adds a component parameter of type float",
-      "scope": "typescript",
-      "prefix": "wl:param:float"
+        "body": ["@property.float($2)", "${1:name}=$2$0;"],
+        "description": "adds a component parameter of type float",
+        "scope": "typescript",
+        "prefix": "wl:param:float"
     },
     "component-parameter-int": {
-      "body": ["@property.int($2)", "${1:name}=$2$0;"],
-      "description": "adds a component parameter of type int",
-      "scope": "typescript",
-      "prefix": "wl:param:int"
+        "body": ["@property.int($2)", "${1:name}=$2$0;"],
+        "description": "adds a component parameter of type int",
+        "scope": "typescript",
+        "prefix": "wl:param:int"
     },
     "component-parameter-string": {
-      "body": ["@property.string('$2')", "${1:name}='$2'$0;"],
-      "description": "adds a component parameter of type string",
-      "scope": "typescript",
-      "prefix": "wl:param:string"
+        "body": ["@property.string('$2')", "${1:name}='$2'$0;"],
+        "description": "adds a component parameter of type string",
+        "scope": "typescript",
+        "prefix": "wl:param:string"
     },
     "component-parameter-bool": {
-      "body": ["@property.bool(${2|false,true|})", "${1:name}=$2$0;"],
-      "description": "adds a component parameter of type bool",
-      "scope": "typescript",
-      "prefix": "wl:param:bool"
+        "body": ["@property.bool(${2|false,true|})", "${1:name}=$2$0;"],
+        "description": "adds a component parameter of type bool",
+        "scope": "typescript",
+        "prefix": "wl:param:bool"
     },
     "component-parameter-mesh": {
-      "body": ["@property.material()", "${1:name}?:Material$0;"],
-      "description": "adds a component parameter of type material",
-      "scope": "typescript",
-      "prefix": "wl:param:material"
-  },
-  "component-parameter-material": {
-      "body": ["@property.mesh()", "${1:name}?:Mesh$0;"],
-      "description": "adds a component parameter of type mesh",
-      "scope": "typescript",
-      "prefix": "wl:param:mesh"
-  },
-  "component-parameter-texture": {
-      "body": ["@property.texture()", "${1:name}?:Texture$0;"],
-      "description": "adds a component parameter of type texture",
-      "scope": "typescript",
-      "prefix": "wl:param:texture"
-  },
-  "component-parameter-animation": {
-      "body": ["@property.animation()", "${1:name}?:Animation$0;"],
-      "description": "adds a component parameter of type animation",
-      "scope": "typescript",
-      "prefix": "wl:param:animation"
-  },
-  "component-parameter-Skin": {
-      "body": ["@property.skin()", "${1:name}?:Skin$0;"],
-      "description": "adds a component parameter of type skin",
-      "scope": "typescript",
-      "prefix": "wl:param:skin"
-  },
-  "component-parameter-enum": {
-      "body":["@property.enum([${2:'A','B'}], ${3:'A'})","${1:name}:$3;"],
-      "description": "adds a component parameter of type enum",
-      "scope": "typescript",
-      "prefix": "wl:param:enum"
-  },
+        "body": ["@property.material()", "${1:name}?:Material$0;"],
+        "description": "adds a component parameter of type material",
+        "scope": "typescript",
+        "prefix": "wl:param:material"
+    },
+    "component-parameter-material": {
+        "body": ["@property.mesh()", "${1:name}?:Mesh$0;"],
+        "description": "adds a component parameter of type mesh",
+        "scope": "typescript",
+        "prefix": "wl:param:mesh"
+    },
+    "component-parameter-texture": {
+        "body": ["@property.texture()", "${1:name}?:Texture$0;"],
+        "description": "adds a component parameter of type texture",
+        "scope": "typescript",
+        "prefix": "wl:param:texture"
+    },
+    "component-parameter-animation": {
+        "body": ["@property.animation()", "${1:name}?:Animation$0;"],
+        "description": "adds a component parameter of type animation",
+        "scope": "typescript",
+        "prefix": "wl:param:animation"
+    },
+    "component-parameter-Skin": {
+        "body": ["@property.skin()", "${1:name}?:Skin$0;"],
+        "description": "adds a component parameter of type skin",
+        "scope": "typescript",
+        "prefix": "wl:param:skin"
+    },
+    "component-parameter-enum": {
+        "body": ["@property.enum([${2:'A','B'}], ${3:'A'})", "${1:name}:$3;"],
+        "description": "adds a component parameter of type enum",
+        "scope": "typescript",
+        "prefix": "wl:param:enum"
+    },
+    "component-parameter-from-enum": {
+        "body": [
+            "@property.enum(Object.keys($2).filter((e) => isNaN(Number(e))))",
+            "${1:name}: $2;"
+        ],
+        "description": "adds a component parameter of type enum from an enum",
+        "scope": "typescript",
+        "prefix": "wl:param:from-enum"
+    },
+    "component-parameter-color": {
+        "body": [
+            "@property.color(${2:1.0},${3:1.0},${3:1.0},${4:1.0})",
+            "${1:name}=[$2,$3,$4,$5];"
+        ],
+        "description": "adds a component parameter of type color",
+        "scope": "typescript",
+        "prefix": "wl:param:color"
+    },
+    "component-parameter-vec2": {
+        "body": ["@property.vec2(${2:'0'},${3:'0'} )", "${1:name}:[$2,$3];"],
+        "description": "adds a component parameter of type vec2",
+        "scope": "typescript",
+        "prefix": "wl:param:vec2"
+    },
+    "component-parameter-vec3": {
+        "body": [
+            "@property.vec3(${2:'0'},${3:'0'},${3:'0'} )",
+            "${1:name}:[$2,$3,$4];"
+        ],
+        "description": "adds a component parameter of type vec3",
+        "scope": "typescript",
+        "prefix": "wl:param:vec3"
+    },
+    "component-parameter-vec4": {
+        "body": [
+            "@property.vec4(${2:'0'},${3:'0'},${3:'0'},${4:'0'})",
+            "${1:name}:[$2,$3,$4,$5];"
+        ],
+        "description": "adds a component parameter of type vec4",
+        "scope": "typescript",
+        "prefix": "wl:param:vec4"
+    },
     "Create Wonderland new class based component": {
-      "description": "New and empty component",
-      "scope": "typescript",
-      "prefix": "wl:component",
-      "body": [
-        "import { Component, Object3D } from '@wonderlandengine/api';",
-        "import { property } from '@wonderlandengine/api/decorators.js';",
-        "",
-        "export class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends Component {",
-        "    static TypeName = '$TM_FILENAME_BASE';",
-        "",
-        "    init() {",
-        "    }",
-        "",
-        "    start() {",
-        "    }",
-        "",
-        "    update(dt:number) {",
-        "    }",
-        "",
-        "}"
-      ]
+        "description": "New and empty component",
+        "scope": "typescript",
+        "prefix": "wl:component",
+        "body": [
+            "import { Component, Object3D } from '@wonderlandengine/api';",
+            "import { property } from '@wonderlandengine/api/decorators.js';",
+            "",
+            "export class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends Component {",
+            "    static TypeName = '$TM_FILENAME_BASE';",
+            "",
+            "    init() {",
+            "    }",
+            "",
+            "    start() {",
+            "    }",
+            "",
+            "    update(dt:number) {",
+            "    }",
+            "",
+            "}"
+        ]
+    },
+    "Create Wonderland new class based component, with singleton": {
+        "description": "New and empty component with singleton",
+        "scope": "typescript",
+        "prefix": "wl:singleton-component",
+        "body": [
+            "import { Component, Object3D } from '@wonderlandengine/api';",
+            "import { property } from '@wonderlandengine/api/decorators.js';",
+            "",
+            "export class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends Component {",
+            "    static TypeName = '$TM_FILENAME_BASE';",
+            "",
+            "    // Singleton",
+            "    private static _instance: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};",
+            "    static get instance(): ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} {",
+            "        return ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance;",
+            "    }",
+            "",
+            "    init() {",
+            "        if (${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance) {",
+            "            console.error(",
+            "                'There can only be one instance of ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} Component'",
+            "            );",
+            "        }",
+            "        ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance = this;",
+            "    }",
+            "",
+            "    start() {",
+            "    }",
+            "",
+            "    update(dt:number) {",
+            "    }",
+            "",
+            "}"
+        ]
     },
     "Throw Error on missing property": {
         "scope": "typescript",
@@ -116,5 +193,4 @@
         ],
         "description": "Throw Error on missing component"
     }
-  }
-  
+}
