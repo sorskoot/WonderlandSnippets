@@ -84,15 +84,15 @@
         "prefix": "wl:param:color"
     },
     "component-parameter-vec2": {
-        "body": ["@property.vec2(${2:'0'},${3:'0'} )", "${1:name}:[$2,$3];"],
+        "body": ["@property.vector2(${2:'0'},${3:'0'} )", "${1:name}=[$2,$3];"],
         "description": "adds a component parameter of type vec2",
         "scope": "typescript",
         "prefix": "wl:param:vec2"
     },
     "component-parameter-vec3": {
         "body": [
-            "@property.vec3(${2:'0'},${3:'0'},${3:'0'} )",
-            "${1:name}:[$2,$3,$4];"
+            "@property.vector3(${2:'0'},${3:'0'},${3:'0'} )",
+            "${1:name}=[$2,$3,$4];"
         ],
         "description": "adds a component parameter of type vec3",
         "scope": "typescript",
@@ -100,8 +100,8 @@
     },
     "component-parameter-vec4": {
         "body": [
-            "@property.vec4(${2:'0'},${3:'0'},${3:'0'},${4:'0'})",
-            "${1:name}:[$2,$3,$4,$5];"
+            "@property.vector4(${2:'0'},${3:'0'},${3:'0'},${4:'0'})",
+            "${1:name}=[$2,$3,$4,$5];"
         ],
         "description": "adds a component parameter of type vec4",
         "scope": "typescript",
