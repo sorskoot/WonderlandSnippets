@@ -28,7 +28,7 @@
         ]
     },
     "scripts": {
-        "vsce:build": "vsce build",
+        "vsce:package": "vsce package",
         "vsce:publish": "vsce publish"
     },
     "devDependencies": {
