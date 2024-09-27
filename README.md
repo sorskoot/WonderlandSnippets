@@ -44,6 +44,10 @@ Nothing known yet.
 
 ## Release Notes
 
+### 1.1.5
+
+- fixed issue with color properties.
+
 ### 1.1.4
 
 - fixed issue with new vector properties.

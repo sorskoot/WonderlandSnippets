@@ -76,7 +76,7 @@
     },
     "component-parameter-color": {
         "body": [
-            "@property.color(${2:1.0},${3:1.0},${3:1.0},${4:1.0})",
+            "@property.color(${2:1.0},${3:1.0},${4:1.0},${5:1.0})",
             "${1:name}=[$2,$3,$4,$5];"
         ],
         "description": "adds a component parameter of type color",
@@ -100,7 +100,7 @@
     },
     "component-parameter-vec4": {
         "body": [
-            "@property.vector4(${2:'0'},${3:'0'},${3:'0'},${4:'0'})",
+            "@property.vector4(${2:'0'},${3:'0'},${4:'0'},${5:'0'})",
             "${1:name}=[$2,$3,$4,$5];"
         ],
         "description": "adds a component parameter of type vec4",

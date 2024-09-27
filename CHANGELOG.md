@@ -4,6 +4,10 @@ All notable changes to the "wonderlandsnippets" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+### 1.1.5
+
+- fixed issue with color properties.
+
 ### 1.1.4
 
 - fixed issue with new vector properties.
