@@ -4,7 +4,7 @@ All notable changes to the "wonderlandsnippets" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-### 1.1.6
+### 1.1.6 / 1.1.7 / 1.1.8
 
 - add support for TypeScript-React
 - add transfrom snippet for adding getter to private property

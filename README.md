@@ -50,7 +50,7 @@ Nothing known yet.
 
 ## Release Notes
 
-### 1.1.6
+### 1.1.6 / 1.1.7 / 1.1.8
 
 - add support for TypeScript-React
 - add transfrom snippet for adding getter to private property

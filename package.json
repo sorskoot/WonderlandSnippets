@@ -6,7 +6,7 @@
     },
     "displayName": "Wonderland Snippets",
     "description": "Code snippets for use with the Wonderland Engine",
-    "version": "1.1.6",
+    "version": "1.1.8",
     "publisher": "Sorskoot",
     "icon": "wonderland.png",
     "engines": {
@@ -23,6 +23,10 @@
             },
             {
                 "language": "typescript",
+                "path": "./snippets/wonderland-ts.code-snippets"
+            },
+            {
+                "language": "typescriptreact",
                 "path": "./snippets/wonderland-ts.code-snippets"
             }
         ]
