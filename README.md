@@ -4,7 +4,7 @@ This extension provides code snippets for the [Wonderland Engine](https://wonder
 
 ## Features
 
-All snippets start `wl:`.
+All Wonderland snippets start `wl:`.
 
 Currently available snippets:
 
@@ -38,11 +38,23 @@ Currently available snippets:
 | `wl:throw-missing-prop` | Check for missing property and throws error if missing | TS |
 | `wl:throw-missing-component` | Check for missing component and throws error if missing | TS |
 
+The snippets contain a few other snippets for typescript. These start with `sorskoot:`.
+
+- `sorskoot:addGetter` | Add public setter to a exising private field
+- `sorskoot:singleton` | Add simple singleton setup to a class
+- `sorskoot:singletonComponent` | Add singleton setup to component
+
 ## Known Issues
 
 Nothing known yet.
 
 ## Release Notes
+
+### 1.1.6
+
+- add support for TypeScript-React
+- add transfrom snippet for adding getter to private property
+- add singleton snippets
 
 ### 1.1.5
 

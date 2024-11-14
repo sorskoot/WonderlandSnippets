@@ -2,67 +2,67 @@
     "component-parameter-object": {
         "body": ["@property.object({required:true})", "${1:name}!:Object3D$0;"],
         "description": "adds a component parameter of type object",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:object"
     },
     "component-parameter-float": {
         "body": ["@property.float($2)", "${1:name}=$2$0;"],
         "description": "adds a component parameter of type float",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:float"
     },
     "component-parameter-int": {
         "body": ["@property.int($2)", "${1:name}=$2$0;"],
         "description": "adds a component parameter of type int",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:int"
     },
     "component-parameter-string": {
         "body": ["@property.string('$2')", "${1:name}='$2'$0;"],
         "description": "adds a component parameter of type string",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:string"
     },
     "component-parameter-bool": {
         "body": ["@property.bool(${2|false,true|})", "${1:name}=$2$0;"],
         "description": "adds a component parameter of type bool",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:bool"
     },
     "component-parameter-mesh": {
         "body": ["@property.material()", "${1:name}?:Material$0;"],
         "description": "adds a component parameter of type material",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:material"
     },
     "component-parameter-material": {
         "body": ["@property.mesh()", "${1:name}?:Mesh$0;"],
         "description": "adds a component parameter of type mesh",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:mesh"
     },
     "component-parameter-texture": {
         "body": ["@property.texture()", "${1:name}?:Texture$0;"],
         "description": "adds a component parameter of type texture",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:texture"
     },
     "component-parameter-animation": {
         "body": ["@property.animation()", "${1:name}?:Animation$0;"],
         "description": "adds a component parameter of type animation",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:animation"
     },
     "component-parameter-Skin": {
         "body": ["@property.skin()", "${1:name}?:Skin$0;"],
         "description": "adds a component parameter of type skin",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:skin"
     },
     "component-parameter-enum": {
         "body": ["@property.enum([${2:'A','B'}], ${3:'A'})", "${1:name}:$3;"],
         "description": "adds a component parameter of type enum",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:enum"
     },
     "component-parameter-from-enum": {
@@ -71,7 +71,7 @@
             "${1:name}: $2;"
         ],
         "description": "adds a component parameter of type enum from an enum",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:from-enum"
     },
     "component-parameter-color": {
@@ -80,13 +80,13 @@
             "${1:name}=[$2,$3,$4,$5];"
         ],
         "description": "adds a component parameter of type color",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:color"
     },
     "component-parameter-vec2": {
         "body": ["@property.vector2(${2:'0'},${3:'0'} )", "${1:name}=[$2,$3];"],
         "description": "adds a component parameter of type vec2",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:vec2"
     },
     "component-parameter-vec3": {
@@ -95,7 +95,7 @@
             "${1:name}=[$2,$3,$4];"
         ],
         "description": "adds a component parameter of type vec3",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:vec3"
     },
     "component-parameter-vec4": {
@@ -104,7 +104,7 @@
             "${1:name}=[$2,$3,$4,$5];"
         ],
         "description": "adds a component parameter of type vec4",
-        "scope": "typescript",
+        "scope": "typescript, typescriptreact",
         "prefix": "wl:param:vec4"
     },
     "Create Wonderland new class based component": {
@@ -192,5 +192,61 @@
             "$0"
         ],
         "description": "Throw Error on missing component"
+    },
+
+    //*** General snippets (start with sorskoot) ***//
+    "Add public setter to a exising private field": {
+        "scope": "typescript",
+        "prefix": "sorskoot:addGetter",
+        "body": [
+            "${TM_SELECTED_TEXT}",
+            //"//${TM_SELECTED_TEXT/^(private\\s+_)([a-zA-Z0-9_]+)(:\\s+[a-zA-Z0-9_]+)?(\\s?=\\s?.*)*(;)$/1$1 2$2 3$3 4$4 /}",
+            "${TM_SELECTED_TEXT/^(private\\s+_)([a-zA-Z0-9_]+)(:\\s+([a-zA-Z0-9_]+))?(\\s?=\\s?.*)*(;)$/public get $2()$3{/}",
+            "    ${TM_SELECTED_TEXT/^(private\\s+_)([a-zA-Z0-9_]+)(:\\s+([a-zA-Z0-9_]+))?(\\s?=\\s?.*)*(;)$/return this._$2;/}",
+            "}",
+            ""
+        ],
+        "description": "Transform a private property into a private property with a public getter, based on selection."
+    },
+
+    "Add singleton setup": {
+        "scope": "typescript",
+        "prefix": "sorskoot:singleton",
+        "body": [
+            "private static _instance: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};",
+            "",
+            "static get instance(): ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} {",
+            "    if (!${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance) {",
+            "        ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance = new ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}();",
+            "    }",
+            "    return ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance;",
+            "}",
+            "",
+            "private constructor() {}",
+            "$0"
+        ],
+        "description": "Add simple singleton setup"
+    },
+
+    "Add singleton setup to component": {
+        "scope": "typescript",
+        "prefix": "sorskoot:singletonComponent",
+        "body": [
+            "    private static _instance: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};",
+            "    static get instance(): ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} {",
+            "        return ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance;",
+            "    }",
+            "",
+            "    init() {",
+            "        if (${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance) {",
+            "            console.error(",
+            "                'There can only be one instance of ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} Component'",
+            "            );",
+            "        }",
+            "        ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance = this;",
+            "    }",
+            "$0"
+        ],
+        "description": "Add singleton setup to component"
     }
 }
