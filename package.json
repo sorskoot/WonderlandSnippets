@@ -5,16 +5,18 @@
         "url": "https://github.com/sorskoot/WonderlandSnippets"
     },
     "displayName": "Wonderland Snippets",
-    "description": "Code snippets for use with the Wonderland Engine",
-    "version": "1.1.8",
+    "description": "Code snippets and extensions for use with the Wonderland Engine",
+    "version": "1.2.0",
     "publisher": "Sorskoot",
     "icon": "wonderland.png",
     "engines": {
         "vscode": "^1.54.0"
     },
     "categories": [
-        "Snippets"
+        "Snippets",
+        "Extension Packs"
     ],
+    "main": "./dist/extension.js",
     "contributes": {
         "snippets": [
             {
@@ -29,13 +31,80 @@
                 "language": "typescriptreact",
                 "path": "./snippets/wonderland-ts.code-snippets"
             }
-        ]
+        ],
+        "commands": [
+            {
+                "command": "sorskoot.openWlpInWonderland",
+                "title": "Open in Wonderland Editor"
+            },
+            {
+                "command": "sorskoot.buildWlpInWonderland",
+                "title": "Build in Wonderland Editor"
+            }
+        ],
+        "languages": [
+            {
+                "id": "wonderland",
+                "aliases": [
+                    "Wonderland Project",
+                    "wlp"
+                ],
+                "extensions": [
+                    ".wlp"
+                ],
+                "configuration": "./wlp-language-configuration.json",
+                "icon": {
+                    "light": "./wonderland.png",
+                    "dark": "./wonderland.png"
+                }
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "sorskoot.openWlpInWonderland",
+                    "when": "resourceExtname == '.wlp'",
+                    "group": "wonderland"
+                },
+                {
+                    "command": "sorskoot.buildWlpInWonderland",
+                    "when": "resourceExtname == '.wlp'",
+                    "group": "wonderland@2"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "WonderlandSnippets",
+            "properties": {
+                "WonderlandSnippets.execPath": {
+                    "type": "string",
+                    "default": "C:\\Program Files\\Wonderland\\WonderlandEngine\\bin\\WonderlandEditor.exe",
+                    "description": "Path to the Wonderland Editor executable, defaults to Windows installation path"
+                }
+            }
+        }
     },
     "scripts": {
         "vsce:package": "vsce package",
-        "vsce:publish": "vsce publish"
+        "vsce:publish": "vsce publish",
+        "vscode:prepublish": "npm run package",
+        "compile": "npm run check-types && npm run lint && node esbuild.js",
+        "watch": "npm-run-all -p watch:*",
+        "watch:esbuild": "node esbuild.js --watch",
+        "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+        "package": "npm run check-types && npm run lint && node esbuild.js --production",
+        "check-types": "tsc --noEmit",
+        "lint": "eslint src"
     },
     "devDependencies": {
-        "@vscode/vsce": "^3.1.0"
+        "@types/vscode": "^1.95.0",
+        "typescript": "^5.6.3",
+        "@vscode/vsce": "^3.2.1",
+        "@types/node": "^22.9.1",
+        "@typescript-eslint/eslint-plugin": "^8.10.0",
+        "@typescript-eslint/parser": "^8.7.0",
+        "eslint": "^9.13.0",
+        "esbuild": "^0.24.0",
+        "npm-run-all": "^4.1.5"
     }
 }
