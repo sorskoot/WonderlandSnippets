@@ -44,11 +44,23 @@ The snippets contain a few other snippets for typescript. These start with `sors
 - `sorskoot:singleton` | Add simple singleton setup to a class
 - `sorskoot:singletonComponent` | Add singleton setup to component
 
+## Extensions
+
+Right click on a Wonderland Engine project file in VSCode to start a new WL editor instance and open that project, or build the project windowless.
+
+By default it looks for the WonderlandEditor.exe file in the default Windows installation folder. This can be changed through the settings. The setting for this is `WonderlandSnippets.execPath`.
+
 ## Known Issues
 
 Nothing known yet.
 
 ## Release Notes
+
+### 1.2.0
+
+- Add `Open in Wonderland Editor` to the context menu in the VSCode explorer to open .wlp files directly in the Editor.
+- Add `Build in Wonderland Editor` to the context menu in the VSCode explorer to build .wlp files from the commandline without opening the editor.
+- Add Wonderland Engine icon to .wlp files
 
 ### 1.1.6 / 1.1.7 / 1.1.8
 
