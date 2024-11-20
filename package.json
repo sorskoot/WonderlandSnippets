@@ -10,13 +10,16 @@
     "publisher": "Sorskoot",
     "icon": "wonderland.png",
     "engines": {
-        "vscode": "^1.54.0"
+        "vscode": "^1.95.0"
     },
     "categories": [
         "Snippets",
         "Extension Packs"
     ],
     "main": "./dist/extension.js",
+    "activationEvents": [
+        "workspaceContains:**/*.wlp"
+    ],
     "contributes": {
         "snippets": [
             {
