@@ -48,7 +48,7 @@ The snippets contain a few other snippets for typescript. These start with `sors
 
 Right click on a Wonderland Engine project file in VSCode to start a new WL editor instance and open that project, or build the project windowless.
 
-By default it looks for the WonderlandEditor.exe file in the default Windows installation folder. This can be changed through the settings.
+By default it looks for the WonderlandEditor.exe file in the default Windows installation folder. This can be changed through the settings. The setting for this is `WonderlandSnippets.execPath`.
 
 ## Known Issues
 
