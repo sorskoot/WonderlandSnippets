@@ -56,6 +56,10 @@ Nothing known yet.
 
 ## Release Notes
 
+### 1.2.1
+
+- Fixed a bug in the vector snippet
+
 ### 1.2.0
 
 - Add `Open in Wonderland Editor` to the context menu in the VSCode explorer to open .wlp files directly in the Editor.
