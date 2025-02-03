@@ -84,14 +84,14 @@
         "prefix": "wl:param:color"
     },
     "component-parameter-vec2": {
-        "body": ["@property.vector2(${2:'0'},${3:'0'} )", "${1:name}=[$2,$3];"],
+        "body": ["@property.vector2(${2:0},${3:0} )", "${1:name}=[$2,$3];"],
         "description": "adds a component parameter of type vec2",
         "scope": "typescript, typescriptreact",
         "prefix": "wl:param:vec2"
     },
     "component-parameter-vec3": {
         "body": [
-            "@property.vector3(${2:'0'},${3:'0'},${3:'0'} )",
+            "@property.vector3(${2:0},${3:0},${4:0} )",
             "${1:name}=[$2,$3,$4];"
         ],
         "description": "adds a component parameter of type vec3",
@@ -100,7 +100,7 @@
     },
     "component-parameter-vec4": {
         "body": [
-            "@property.vector4(${2:'0'},${3:'0'},${4:'0'},${5:'0'})",
+            "@property.vector4(${2:0},${3:0},${4:0},${5:0})",
             "${1:name}=[$2,$3,$4,$5];"
         ],
         "description": "adds a component parameter of type vec4",
@@ -161,6 +161,28 @@
             "",
             "    update(dt:number) {",
             "    }",
+            "",
+            "}"
+        ]
+    },
+    "Create new class, with singleton": {
+        "description": "New and empty class with singleton",
+        "scope": "typescript",
+        "prefix": "sorskoot:singleton-class",
+        "body": [
+            "export class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} {",
+            "private static _instance: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};",
+            "",
+            "static get instance(): ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} {",
+            "    if (!${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance) {",
+            "        ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance = new ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}();",
+            "    }",
+            "    return ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}._instance;",
+            "}",
+            "",
+            "private constructor() {}",
+            "",
+            "$0",
             "",
             "}"
         ]
