@@ -21,6 +21,7 @@ jobs:
               with:
                   node-version: 16
             - run: npm ci
+            - run: npm install -g vsce
             - run: vsce publish -p $VSCE_PAT
               env:
                   NODE_AUTH_TOKEN: ${{secrets.VSCE_PAT}}
