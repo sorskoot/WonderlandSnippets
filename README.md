@@ -1,6 +1,6 @@
 # Wonderland code snippets
 
-This extension provides code snippets for the [Wonderland Engine](https://wonderlandengine.com/).
+This extension provides code snippets for [Wonderland Engine](https://wonderlandengine.com/).
 
 ## Features
 
