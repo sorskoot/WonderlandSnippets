@@ -6,7 +6,7 @@
     },
     "displayName": "Wonderland Snippets",
     "description": "Code snippets and extensions for use with the Wonderland Engine",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "publisher": "Sorskoot",
     "icon": "wonderland.png",
     "engines": {
