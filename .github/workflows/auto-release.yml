@@ -1,0 +1,26 @@
+name: Create Release from Tag
+on:
+    push:
+        tags:
+            - 'v*.*.*'
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Release
+              uses: softprops/action-gh-release@v2
+
+    publish-marketplace:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 16
+            - run: npm ci
+            - run: vsce publish -p $VSCE_PAT
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.VSCE_PAT}}
