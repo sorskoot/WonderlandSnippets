@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
-import { spawn, exec } from 'child_process';
+import {spawn, exec} from 'child_process';
+import {validateGLSL} from './glsl-validation.js';
 
 export function activate(context: vscode.ExtensionContext) {
     const openWlpInWonderland = vscode.commands.registerCommand(
@@ -16,8 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
                 );
                 return;
             }
-            const config =
-                vscode.workspace.getConfiguration('WonderlandSnippets');
+            const config = vscode.workspace.getConfiguration('WonderlandSnippets');
             const WLEPath = config.get<string>('execPath');
             if (!WLEPath) {
                 vscode.window.showErrorMessage(
@@ -26,19 +26,14 @@ export function activate(context: vscode.ExtensionContext) {
                 return;
             }
 
-            exec(
-                `"${WLEPath}" --project "${filePath}"`,
-                (error, stdout, stderr) => {
-                    if (error) {
-                        vscode.window.showErrorMessage(
-                            `Error opening file: ${stderr}`
-                        );
-                        return;
-                    }
-                    console.log(`stdout: ${stdout}`);
-                    console.error(`stderr: ${stderr}`);
+            exec(`"${WLEPath}" --project "${filePath}"`, (error, stdout, stderr) => {
+                if (error) {
+                    vscode.window.showErrorMessage(`Error opening file: ${stderr}`);
+                    return;
                 }
-            );
+                console.log(`stdout: ${stdout}`);
+                console.error(`stderr: ${stderr}`);
+            });
         }
     );
     context.subscriptions.push(openWlpInWonderland);
@@ -57,8 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
                 );
                 return;
             }
-            const config =
-                vscode.workspace.getConfiguration('WonderlandSnippets');
+            const config = vscode.workspace.getConfiguration('WonderlandSnippets');
             const WLEPath = config.get<string>('execPath');
             if (!WLEPath) {
                 vscode.window.showErrorMessage(
@@ -67,10 +61,9 @@ export function activate(context: vscode.ExtensionContext) {
                 return;
             }
 
-            const output = vscode.window.createOutputChannel(
-                'Wonderland Editor',
-                { log: true }
-            );
+            const output = vscode.window.createOutputChannel('Wonderland Editor', {
+                log: true,
+            });
             output.show();
 
             const buildContainer = spawn(WLEPath, [
@@ -121,14 +114,24 @@ export function activate(context: vscode.ExtensionContext) {
                 });
 
                 if (data.toString().includes('[error] Packaging failed.')) {
-                    vscode.window
-                        .showErrorMessage(`Packging failed`)
-                        .then(() => {
-                            output.show();
-                        });
+                    vscode.window.showErrorMessage(`Packging failed`).then(() => {
+                        output.show();
+                    });
                 }
             });
         }
     );
     context.subscriptions.push(buildWlpInWonderland);
+
+    // New GLSL Validation Feature
+    const diagnosticCollection =
+        vscode.languages.createDiagnosticCollection('wonderlandGLSL');
+    context.subscriptions.push(diagnosticCollection);
+
+    vscode.workspace.onDidOpenTextDocument((doc) =>
+        validateGLSL(doc, diagnosticCollection)
+    );
+    vscode.workspace.onDidChangeTextDocument((event) =>
+        validateGLSL(event.document, diagnosticCollection)
+    );
 }

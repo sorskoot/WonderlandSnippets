@@ -9,6 +9,7 @@
     "version": "1.2.7",
     "publisher": "Sorskoot",
     "icon": "wonderland.png",
+    "type": "module",
     "engines": {
         "vscode": "^1.95.0"
     },
@@ -98,17 +99,27 @@
         "package": "npm run check-types && npm run lint && node esbuild.js --production",
         "check-types": "tsc --noEmit",
         "lint": "eslint src",
-        "deploy": "vsce publish"
+        "deploy": "vsce publish",
+        "test": "vitest",
+        "test:ui": "vitest --ui",
+        "test:run": "vitest run"
     },
+    "prettier": "@wonderlandengine/prettier-config",
     "devDependencies": {
         "@types/node": "^22.9.1",
-        "@types/vscode": "^1.95.0",
+        "@types/vscode": "^1.102.0",
         "@typescript-eslint/eslint-plugin": "^8.10.0",
         "@typescript-eslint/parser": "^8.7.0",
+        "@vitest/coverage-v8": "^3.2.4",
+        "@vitest/ui": "^3.2.4",
         "@vscode/vsce": "^3.3.2",
+        "@wonderlandengine/prettier-config": "1.0.0",
         "esbuild": "^0.24.0",
         "eslint": "^9.13.0",
         "npm-run-all": "^4.1.5",
-        "typescript": "^5.6.3"
+        "prettier": "^3.3.3",
+        "tape": "5.9.0",
+        "typescript": "^5.6.3",
+        "vitest": "^3.2.4"
     }
 }
