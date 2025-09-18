@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { spawn, exec } from 'child_process';
+import { WLPEditorProvider } from './wlp-editor/wlp-editor';
 
 export function activate(context: vscode.ExtensionContext) {
     const openWlpInWonderland = vscode.commands.registerCommand(
@@ -131,4 +132,5 @@ export function activate(context: vscode.ExtensionContext) {
         }
     );
     context.subscriptions.push(buildWlpInWonderland);
+    context.subscriptions.push(WLPEditorProvider.register(context));
 }

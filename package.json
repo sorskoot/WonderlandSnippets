@@ -85,20 +85,37 @@
                     "description": "Path to the Wonderland Editor executable, defaults to Windows installation path"
                 }
             }
-        }
+        },
+        "customEditors": [
+            {
+                "viewType": "wlpEditor.wlp",
+                "displayName": "Wonderland Engine Project Viewer",
+                "selector": [
+                    {
+                        "filenamePattern": "**/*.wlp"
+                    }
+                ]
+            }
+        ]
     },
     "scripts": {
         "vsce:package": "vsce package",
         "vsce:publish": "vsce publish",
         "vscode:prepublish": "npm run package",
-        "compile": "npm run check-types && npm run lint && node esbuild.js",
+        "compile": "npm run check-types && npm run lint && node esbuild-script.js",
         "watch": "npm-run-all -p watch:*",
-        "watch:esbuild": "node esbuild.js --watch",
+        "watch:esbuild": "node esbuild-script.js --watch",
         "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
-        "package": "npm run check-types && npm run lint && node esbuild.js --production",
+        "package": "npm run check-types && npm run lint && node esbuild-script.js --production",
         "check-types": "tsc --noEmit",
         "lint": "eslint src",
-        "deploy": "vsce publish"
+        "deploy": "vsce publish",
+        "build:editor": "esbuild --bundle wlp-editor/index.tsx --outfile=build/wlp-editor.js --minify --sourcemap --loader:.tsx=tsx --loader:.ts=ts --loader:.css=text --external:react --external:react-dom",
+        "build:editor:watch": "esbuild --bundle wlp-editor/index.tsx --outfile=build/wlp-editor.js --minify --sourcemap --loader:.tsx=tsx --loader:.ts=ts --loader:.css=text --external:react --external:react-dom --watch"
+    },
+    "dependencies": {
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1"
     },
     "devDependencies": {
         "@types/node": "^22.9.1",
