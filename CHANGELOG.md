@@ -4,6 +4,10 @@ All notable changes to the "wonderlandsnippets" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+### 1.2.2
+
+- Add static onRegister
+
 ### 1.2.1
 
 - Fixed a bug in the vector snippet

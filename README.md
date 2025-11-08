@@ -32,6 +32,7 @@ Currently available snippets:
 | `wl:param:vec2` | create component parameter of type vector2 | TS |
 | `wl:param:vec3` | create component parameter of type vector3 | TS |
 | `wl:param:vec4` | create component parameter of type vector4 | TS |
+| `wl:onregister` | adds the static onRegister | TS |
 | `wl:script-reference` | adds a reference to the deploy folder with the wonderland script for IntelliSense | JS |
 | `wl:add-object` | adds an object into the scene | JS |
 | `wl:add-objects` | batch adds objects into the scene and starts a loop to add components for each | JS |
@@ -55,6 +56,10 @@ By default it looks for the WonderlandEditor.exe file in the default Windows ins
 Nothing known yet.
 
 ## Release Notes
+
+### 1.2.2
+
+- Add static onRegister
 
 ### 1.2.1
 

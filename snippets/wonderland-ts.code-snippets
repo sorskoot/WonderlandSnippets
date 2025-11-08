@@ -107,6 +107,16 @@
         "scope": "typescript, typescriptreact",
         "prefix": "wl:param:vec4"
     },
+    "component-onRegister": {
+        "body": [
+            "static onRegister(engine: WonderlandEngine) {",
+            "    $0",
+            "}"
+        ],
+        "description": "adds the onRegister method for the component",
+        "scope": "typescript, typescriptreact",
+        "prefix": "wl:onRegister"
+    },
     "Create Wonderland new class based component": {
         "description": "New and empty component",
         "scope": "typescript",
